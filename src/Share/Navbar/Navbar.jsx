@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../Images/logo.png"
+import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Register/Register";
 
 
 const Navbar = () => {
@@ -30,9 +32,9 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     <div className="flex md:text-lg  justify-center items-center">
-    <button>Login</button>
+    <button> <Login/></button>
     <h1>/</h1>
-    <button>Register</button>
+    <Register/>
     </div>
   </div>
 </div>
