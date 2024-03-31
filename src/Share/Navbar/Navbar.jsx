@@ -2,9 +2,15 @@ import { NavLink } from "react-router-dom";
 import logo from "../../Images/logo.png"
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Navbar = () => {
+
+  const { user } = useContext(AuthContext);
+ 
+
   const navlinks = <>
   <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/menu'>Our Menu</NavLink></li>
@@ -31,6 +37,12 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+  {
+            user && <div className="mr-8">
+              <span >{user.displayName}</span>
+
+            </div>
+          }
     <div className="flex md:text-lg  justify-center items-center">
     <button> <Login/></button>
     <h1>/</h1>
